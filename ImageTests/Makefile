@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Image1.0.0
-DISTDIR = /home/jmacey/Desktop/ASE/ImageTests/obj/Image1.0.0
+DISTDIR = /home/s5219489/Image_Testing/ImageTests/obj/Image1.0.0
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -224,7 +224,6 @@ DIST          = /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
-		../../../.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -432,7 +431,6 @@ Makefile: ImageLib.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf 
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
-		../../../.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -628,7 +626,6 @@ Makefile: ImageLib.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf 
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf:
-../../../.qmake.stash:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -676,6 +673,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 

@@ -21,6 +21,9 @@ class Image
     void getPixel(unsigned int _x, unsigned int _y, unsigned char &o_r, unsigned char &o_g, unsigned char &o_b);
     bool write(const std::string &_fname);
     void clearColour(unsigned char _r, unsigned char _g, unsigned char _b);
+    void plotline(int _x0, int _y0, int _x1, int _y1);
+    void plotlinelow(int _x0, int _y0, int _x1, int _y1);
+    void plotlinehigh(int _x0, int _y0, int _x1, int _y1);
 
 private :
       unsigned int m_width=0;

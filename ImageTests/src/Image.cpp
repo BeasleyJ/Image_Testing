@@ -68,7 +68,80 @@ void Image::clearColour(unsigned char _r, unsigned char _g, unsigned char _b)
     }
 }
 
+void Image::plotline(int _x0, int _y0, int _x1, int _y1)
+{
+    if(std::abs(_y1 - _y0) < std::abs(_x1 - _x0))
+    {
+            if(_x0 > _x1)
+            {
+                plotlinelow(_x1, _y1, _x0, _y0);
+            }
+            else
+            {
+                plotlinelow(_x0, _y0, _x1, _y1);
+            }
+    }
+    else
+    {
+        if(_y0 > _y1)
+        {
+            plotlinehigh(_x1, _y1, _x0, _y0);
+        }
+        else
+        {
+           plotlinehigh(_x0, _y0, _x1, _y1);
+        }
+    }
 
+}
+
+void Image::plotlinelow(int _x0, int _y0, int _x1, int _y1)
+{
+    int dx = _x1 - _x0;
+    int dy = _y1 - _y0;
+    int yi = 1;
+    if(dy < 0)
+    {
+        yi = -1;
+        dy = -dy;
+    }
+    int D = 2 * dy - dx;
+    int y = _y0;
+    for(int x=_x0; x<_x1; ++x)
+    {
+        setPixel(x,y,255,0,0);
+        if (D > 0)
+        {
+            y = y + yi;
+            D = D - 2 * dx;
+        }
+        D = D + 2 * dy;
+     }
+}
+
+void Image::plotlinehigh(int _x0, int _y0, int _x1, int _y1)
+{
+    int dx = _x1 - _x0;
+    int dy = _y1 - _y0;
+    int xi = 1;
+    if(dx < 0)
+    {
+        xi = -1;
+        dx = -dx;
+    }
+    int D = 2 * dx - dy;
+    int x = _x0;
+    for(int y=_y0; y<_y1; ++y)
+    {
+        setPixel(x,y,255,0,0);
+        if (D > 0)
+        {
+            x = x + xi;
+            D = D - 2 * dy;
+        }
+        D = D + 2 * dx;
+     }
+}
 
 unsigned char * Image::pixels()
 {

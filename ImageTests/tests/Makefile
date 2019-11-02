@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = ImageTests1.0.0
-DISTDIR = /home/jmacey/Desktop/ASE/ImageTests/tests/.tmp/ImageTests1.0.0
+DISTDIR = /home/s5219489/Image_Testing/ImageTests/tests/.tmp/ImageTests1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/opt/Qt5.12.3/5.12.3/gcc_64/lib
 LIBS          = $(SUBLIBS) -L/usr/local/lib -lgtest -lgtest_main -pthread -L/public/devel/2018/lib64 -lOpenImageIO -L/opt/Qt5.12.3/5.12.3/gcc_64/lib -lQt5Gui -lQt5Core -lGL -lpthread   
@@ -229,7 +229,6 @@ DIST          = /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
-		../../../../.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -433,7 +432,6 @@ Makefile: ImageTests.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.con
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
-		../../../../.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -628,7 +626,6 @@ Makefile: ImageTests.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.con
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf:
-../../../../.qmake.stash:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -675,6 +672,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 

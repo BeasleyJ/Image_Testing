@@ -16,7 +16,7 @@ TEST(Image, defaultCtor)
 
 TEST(Image,userCtor)
 {
-    Image i(100,100);m_pixels
+    Image i(100,100);
     EXPECT_EQ(i.width(),100);
     EXPECT_EQ(i.height(),100);
     EXPECT_EQ(i.channels(),3);
@@ -80,6 +80,19 @@ TEST(Image,copyCtor)
     EXPECT_EQ(b,0);
 }
 
+TEST(Image,plotline)
+{
+    Image i(1000,1000);
+    i.clearColour(128,128,128);
+    i.plotline(0,0,1000,1000);
+    i.plotline(1000,0,0,1000);
+    unsigned char r,g,b;
+    i.getPixel(0,1,r,g,b);
+    EXPECT_EQ(r,255);
+    EXPECT_EQ(g,0);
+    EXPECT_EQ(b,0);
+    i.write("testing.png");
+}
 
 
 
